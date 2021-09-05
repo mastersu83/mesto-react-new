@@ -1,0 +1,89 @@
+.profile__header {
+  margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(min-content, max-content)) minmax(
+      min-content,
+      auto
+    );
+  align-items: center;
+  column-gap: 30px;
+}
+
+.profile__avatar {
+  align-self: start;
+}
+
+.profile__info {
+  display: flex;
+}
+
+.profile__data {
+  max-width: 350px;
+}
+
+.profile__name {
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+  color: #ffffff;
+  margin: 0;
+  margin-bottom: 16px;
+  overflow: hidden;
+  max-width: 330px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile__post {
+  font-size: 18px;
+  line-height: 22px;
+  color: #ffffff;
+}
+
+.profile__editLink {
+  align-self: start;
+  margin-top: 17px;
+  margin-left: 18px;
+}
+
+.profile__editButton {
+  transition: 0.3s;
+}
+
+.profile__editButton:hover {
+  opacity: 0.6;
+}
+
+.profile__add {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.profile__addButton {
+  padding: 14px 64px;
+  border: 1px solid #ffffff;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.profile__addButton:hover {
+  opacity: 0.6;
+}
+
+.popupLink {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.footer__content {
+  padding-top: 66px;
+  padding-bottom: 60px;
+}
+
+.footer__copy {
+  font-size: 18px;
+  line-height: 22px;
+  color: #545454;
+}

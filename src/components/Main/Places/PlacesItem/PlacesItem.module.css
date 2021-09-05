@@ -1,0 +1,98 @@
+.places__item {
+  background-color: #fff;
+  border-radius: 10px;
+  max-width: 282px;
+  max-height: 361px;
+  position: relative;
+}
+
+.places__itemImg {
+  border-radius: 10px 10px 0 0;
+  transition: 1s;
+  height: 282px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.places__data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 15px 26px 21px;
+  position: relative;
+}
+
+.places__itemTitle {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 29px;
+  color: #000000;
+  max-width: 215px;
+  margin: 0;
+}
+
+.places__itemLike {
+  background: transparent;
+  background-image: url(../../../../img/like.svg);
+  background-size: 22px;
+  width: 22px;
+  height: 19px;
+  border: none;
+  /*background-repeat: no-repeat;*/
+  /*background-position: center;*/
+  /*padding: 0px;*/
+  cursor: pointer;
+}
+
+.places__itemLike:hover {
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.places__itemLike.places__itemLikeDarken {
+  opacity: 1;
+}
+
+.places__itemLikeDarken {
+  background: transparent;
+  background-image: url(../../../../img/dark-like.svg);
+  background-size: 22px;
+  width: 22px;
+  height: 19px;
+  border: none;
+  /*background-repeat: no-repeat;*/
+  /*background-position: center;*/
+  /*padding: 0px;*/
+  cursor: pointer;
+  position: absolute;
+  top: 25px;
+  right: 15px;
+}
+
+.places__removeButton {
+  background: transparent;
+  background-image: url(../../../../img/Trash.svg);
+  background-size: 22px;
+  width: 18px;
+  height: 20px;
+  border: none;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0;
+  cursor: pointer;
+  position: absolute;
+  top: 18px;
+  right: 15px;
+}
+
+.places__removeButton:hover {
+  opacity: 0.6;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
