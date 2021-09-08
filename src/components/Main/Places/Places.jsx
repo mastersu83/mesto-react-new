@@ -3,14 +3,21 @@ import classes from "./Places.module.css";
 import PlacesItem from "./PlacesItem/PlacesItem";
 
 const Places = (props) => {
-  let itemElement = props.state.places.item.map((p) => (
-    <PlacesItem key={p.id} src={p.link} name={p.name} />
-  ));
-  return (
-    <div className="places">
-      <div className={classes.places__items}>{itemElement}</div>
-    </div>
-  );
+	let itemElement = props.state.places.item.map((p) => (
+		<PlacesItem
+			id={p.id}
+			key={p.id}
+			src={p.link}
+			name={p.name}
+			item={props.state.places.item}
+			removeItem={props.removeItem}
+		/>
+	));
+	return (
+		<div className="places">
+			<div className={classes.places__items}>{itemElement}</div>
+		</div>
+	);
 };
 
 export default Places;
