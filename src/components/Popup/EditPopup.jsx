@@ -13,14 +13,11 @@ const EditPopup = (props) => {
 	};
 
 	const newProfileName = () => {
-		if (
-			props.profile.newProfileName.length &&
-			props.profile.newProfilePost.length !== 0
-		) {
+		if (props.profile.name.length && props.profile.post.length !== 0) {
 			props.newProfileName();
 			props.closePopup();
 		} else {
-			alert("заполните поле");
+			alert("заполните оба поля");
 		}
 	};
 
@@ -44,14 +41,14 @@ const EditPopup = (props) => {
 								placeholder="Введите имя"
 								required
 								onChange={newProfileNameChange}
-								value={props.profile.newProfileName}
+								value={props.profile.name}
 							/>
 							<input
 								className={classes.popup__input}
 								placeholder="Расскажите о себе"
 								required
 								onChange={newProfilePostChange}
-								value={props.profile.newProfilePost}
+								value={props.profile.post}
 							/>
 							<button
 								onClick={newProfileName}

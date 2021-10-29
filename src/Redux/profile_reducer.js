@@ -3,8 +3,6 @@ const PROFILE_POST_CHANGE = "PROFILE_POST_CHANGE";
 const NEW_PRFILE_NAME = "NEW_PRFILE_NAME";
 
 let initialState = {
-	newProfileName: "",
-	newProfilePost: "",
 	name: "Жак-Ив Кусто",
 	post: "Исследователь океана",
 };
@@ -14,18 +12,18 @@ const profileReducer = (state = initialState, action) => {
 		case PROFILE_NAME_CHANGE:
 			return {
 				...state,
-				newProfileName: action.newName,
+				name: action.newName,
 			};
 		case PROFILE_POST_CHANGE:
 			return {
 				...state,
-				newProfilePost: action.newPost,
+				post: action.newPost,
 			};
 		case NEW_PRFILE_NAME:
 			return {
 				...state,
-				name: state.newProfileName,
-				post: state.newProfilePost,
+				name: state.name,
+				post: state.post,
 			};
 		default:
 			return state;

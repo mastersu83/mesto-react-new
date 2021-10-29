@@ -4,14 +4,12 @@ import editBtn from "../../../../img/edit-btn.svg";
 import EditPopup from "../../../Popup/EditPopup";
 
 const ProfileInfo = (props) => {
-	const [popupEdit, setPopupEdit] = useState();
+	const [popupEdit, setPopupEdit] = useState(false);
 
 	let openPopupEdit = () => {
-		setPopupEdit(true);
+		setPopupEdit(!popupEdit);
 	};
-	let closePopupEdit = () => {
-		setPopupEdit(false);
-	};
+
 	return (
 		<div className={classes.profile__info}>
 			<div className={classes.profile__data}>
@@ -29,7 +27,7 @@ const ProfileInfo = (props) => {
 				newProfileName={props.newProfileName}
 				newProfilePost={props.newProfilePost}
 				openPopup={popupEdit}
-				closePopup={closePopupEdit}
+				closePopup={openPopupEdit}
 				profile={props.state.profile}
 			/>
 		</div>

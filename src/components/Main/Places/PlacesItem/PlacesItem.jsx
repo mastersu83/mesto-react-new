@@ -6,24 +6,19 @@ const PlacesItem = (props) => {
 	const [popupImg, setPopup] = useState(false);
 
 	let openPopupImg = () => {
-		setPopup(true);
-	};
-	let closePopupImg = () => {
-		setPopup(false);
+		setPopup(!popupImg);
 	};
 
 	const [like, setLike] = useState();
 
 	const onLike = () => {
-		setLike(true);
-	};
-	const onLikeDarken = () => {
-		setLike(false);
+		setLike(!like);
 	};
 
 	let removeItem = () => {
-		let index = props.item.findIndex((item) => item.id === props.id);
-		props.removeItem(index);
+		let indexLink = props.item.findIndex((item) => item.id === props.id);
+		let currentId = props.item[indexLink].id;
+		props.removeItem(currentId);
 	};
 
 	return (
@@ -44,7 +39,7 @@ const PlacesItem = (props) => {
 					onClick={onLike}
 				/>
 				<button
-					onClick={onLikeDarken}
+					onClick={onLike}
 					type="button"
 					className={`${classes.places__itemLikeDarken} 
           ${like ? " " : `${classes.hidden}`}`}
@@ -59,7 +54,7 @@ const PlacesItem = (props) => {
 				src={props.src}
 				name={props.name}
 				openPopup={popupImg}
-				closePopup={closePopupImg}
+				closePopup={openPopupImg}
 			/>
 		</div>
 	);

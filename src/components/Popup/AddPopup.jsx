@@ -3,7 +3,7 @@ import closeIcon from "../../img/close-icon.svg";
 import classes from "./Popup.module.css";
 
 const AddPopup = (props) => {
-	// debugger;
+	console.log(props.places.item);
 	let newPlacesNameChange = (e) => {
 		let newName = e.target.value;
 		props.onPlacesNameChange(newName);
@@ -21,8 +21,7 @@ const AddPopup = (props) => {
 			props.newPlace();
 			props.closePopup();
 		} else {
-			return;
-			// alert("заполните поле");
+			alert("заполните поле");
 		}
 	};
 	return (
@@ -48,7 +47,7 @@ const AddPopup = (props) => {
 								placeholder="Название"
 								required
 								onChange={newPlacesNameChange}
-								value={props.places.newPlacesName}
+								value={props.places.newPlaceName}
 							/>
 							<input
 								id="input-post"
@@ -58,7 +57,7 @@ const AddPopup = (props) => {
 								placeholder="Ссылка на картинку"
 								required
 								onChange={newPlacesLinkChange}
-								value={props.places.newPlacesLink}
+								value={props.places.newPlaceLink}
 							/>
 							<button
 								id="save"

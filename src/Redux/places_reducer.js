@@ -38,6 +38,7 @@ let initialState = {
 	],
 	newPlaceName: "",
 	newPlaceLink: "",
+	newId: 6,
 };
 
 const placesReducer = (state = initialState, action) => {
@@ -54,10 +55,11 @@ const placesReducer = (state = initialState, action) => {
 			};
 		case NEW_PLACE:
 			let newPlace = {
-				id: state.item.length,
+				id: state.newId++,
 				name: state.newPlaceName,
 				link: state.newPlaceLink,
 			};
+
 			return {
 				...state,
 				item: [newPlace, ...state.item],
@@ -67,8 +69,7 @@ const placesReducer = (state = initialState, action) => {
 		case REMOVE_ITEM:
 			return {
 				...state,
-				item: state.item.splice(action.index, 1),
-				...state,
+				item: state.item.filter((item) => item.id !== action.currentId),
 			};
 		default:
 			return state;
@@ -92,10 +93,10 @@ export const newPlace = () => {
 		type: NEW_PLACE,
 	};
 };
-export const removeItem = (index) => {
+export const removeItem = (currentId) => {
 	return {
 		type: REMOVE_ITEM,
-		index,
+		currentId,
 	};
 };
 

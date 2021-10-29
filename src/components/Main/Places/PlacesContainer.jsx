@@ -4,7 +4,7 @@ import { removeItem } from "../../../Redux/places_reducer";
 
 let mapStateToProps = (state) => {
 	return {
-		state: state,
+		item: state.places.item,
 	};
 };
 

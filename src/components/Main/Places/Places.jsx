@@ -3,13 +3,13 @@ import classes from "./Places.module.css";
 import PlacesItem from "./PlacesItem/PlacesItem";
 
 const Places = (props) => {
-	let itemElement = props.state.places.item.map((p) => (
+	let itemElement = props.item.map((p) => (
 		<PlacesItem
 			id={p.id}
 			key={p.id}
 			src={p.link}
 			name={p.name}
-			item={props.state.places.item}
+			item={props.item}
 			removeItem={props.removeItem}
 		/>
 	));

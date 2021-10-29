@@ -7,14 +7,12 @@ import ProfileInfo from "./ProfileInfo/ProfileInfo";
 
 const Profile = (props) => {
 	// debugger;
-	const [popupAdd, setPopupAdd] = useState(false);
+	const [popup, setPopup] = useState(false);
 
-	let openPopupAdd = () => {
-		setPopupAdd(true);
+	let openPopup = () => {
+		setPopup(!popup);
 	};
-	let closePopupAdd = () => {
-		setPopupAdd(false);
-	};
+
 	return (
 		<section className="profile">
 			<div className="container">
@@ -26,9 +24,11 @@ const Profile = (props) => {
 						onProfilePostChange={props.onProfilePostChange}
 						newProfileName={props.newProfileName}
 						newProfilePost={props.newProfilePost}
+						openPopup={popup}
+						closePopup={openPopup}
 					/>
 					<div className={classes.profile__add}>
-						<button className={classes.popupLink} onClick={openPopupAdd}>
+						<button className={classes.popupLink} onClick={openPopup}>
 							<img className={classes.profile__addButton} src={addBtn} alt="" />
 						</button>
 					</div>
@@ -38,8 +38,8 @@ const Profile = (props) => {
 				onPlacesLinkChange={props.onPlacesLinkChange}
 				onPlacesNameChange={props.onPlacesNameChange}
 				newPlace={props.newPlace}
-				openPopup={popupAdd}
-				closePopup={closePopupAdd}
+				openPopup={popup}
+				closePopup={openPopup}
 				places={props.state.places}
 			/>
 		</section>
